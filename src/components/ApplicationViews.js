@@ -30,6 +30,12 @@ export default (props) => {
                 </Route>
             </TaskProvider>
 
+            <MessageProvider>
+                <Route exact path="/messages/create">
+                    <MessageForm />
+                </Route>
+            </MessageProvider>
         </>
     )
 }
+
