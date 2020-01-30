@@ -1,14 +1,27 @@
 import React from "react"
+import { Route, Redirect } from "react-router-dom"
+import ApplicationViews from "./ApplicationViews"
+import NavBar from "./nav/Navbar"
+import Login from "./auth/Login"
+import Register from "./auth/Register"
+import "./Nutshell2.css"
 
 export default () => (
     <>
-        <h2>Nutshell</h2>
-        <small>Version 2.0</small>
-        <address>
-            <div>Thanks for being so patient and waiting for this new update.</div>
-            <div>New features and revised styling!</div>
-        </address>
+        <Route render={() => {
+            if (localStorage.getItem("currentUser")) {
+                return (
+                    <>
+                        <Route render={props => <NavBar {...props} />} />
+                        <Route render={props => <ApplicationViews {...props} />} />
+                    </>
+                )
+            } else {
+                return <Redirect to="/login" />
+            }
+        }} />
 
-        
+        <Route path="/login" render={props => <Login {...props} />} />
+        <Route path="/register" render={props => <Register {...props} />} />
     </>
 )
