@@ -7,6 +7,8 @@ import TaskList from "./task/TaskList";
 //import EventList from "./event/EventList";
 //import ArticleList from "./article/ArticleList";
 import TaskForm from "./task/TaskForm";
+import { MessageProvider } from "./message/MessageProvider";
+import MessageForm from "./message/MessageForm";
 
 
 export default (props) => {
@@ -17,18 +19,18 @@ export default (props) => {
                     <h2>Tasks</h2>
                     <TaskForm />
                     <TaskList />
-                    <h2>Events</h2>
+                    <h2>Messages</h2>
                 </Route>
             </TaskProvider>
 
-            <TaskProvider>
+            {/* <TaskProvider>
                 <Route exact path="/tasks" render={
                     props => <TaskList {...props} />
                 } />
                 <Route exact path="/tasks/create">
                     <TaskForm/>
                 </Route>
-            </TaskProvider>
+            </TaskProvider> */}
 
             <MessageProvider>
                 <Route exact path="/messages/create">

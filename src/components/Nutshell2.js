@@ -1,14 +1,13 @@
 import React from "react"
-import { Route } from "react-router-dom"
+import { Route, Redirect } from "react-router-dom"
 import NavBar from "./nav/Navbar"
 import ApplicationViews from "./ApplicationViews"
 import "./Nutshell2.css"
+import Login from "./auth/Login"
+import Register from "./auth/Register"
 
 export default () => (
     <>
-        <NavBar />
-        <ApplicationViews />
-
         <Route render={() => {
             if (localStorage.getItem("currentUser")) {
                 return (
