@@ -1,14 +1,12 @@
 import React from "react"
+import { Route } from "react-router-dom"
+import NavBar from "./nav/Navbar"
+import ApplicationViews from "./ApplicationViews"
+import "./Nutshell2.css"
 
 export default () => (
     <>
-        <h2>Nutshell</h2>
-        <small>Version 2.0</small>
-        <address>
-            <div>Thanks for being so patient and waiting for this new update.</div>
-            <div>New features and revised styling!</div>
-        </address>
-
-        
+        <NavBar />
+        <ApplicationViews />
     </>
 )
