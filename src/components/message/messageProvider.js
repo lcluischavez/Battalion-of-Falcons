@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react"
 export const MessageContext = React.createContext()
 
 export const MessageProvider = (props) => {
-    const [theMessages, setMessages] = useState([])
+    const [messages, changeMessageState] = useState([])
 
     const getMessages = () => {
         return fetch("http://localhost:8088/messages")
             .then(res => res.json())
-            .then(setMessages)
+            .then(changeMessageState)
     }
 
     const addMessage = message => {
@@ -22,35 +22,35 @@ export const MessageProvider = (props) => {
             .then(getMessages)
     }
 
-    const releaseMessage = messageId => {
-        return fetch(`http://localhost:8088/messages/${messageId}`, {
-        method: "DELETE"
-    })
+    const deleteMessage = message => {
+        return fetch(`http://localhost:8088/messages/${message.id}`, {
+            method: "DELETE"
+        })
         .then(getMessages)
-}
+    }
 
     const updateMessage = message => {
         return fetch(`http://localhost:8088/messages/${message.id}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(message)
-    })
-        .then(getMessages)
-}
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(message)
+        })
+            .then(getMessages)
+    }
 
     useEffect(() => {
         getMessages()
     }, [])
 
     useEffect(() => {
-        console.log("****  Message APPLICATION STATE CHANGED  ****")
-    }, [theMessages])
+        console.log(messages)
+    }, [messages])
 
     return (
         <MessageContext.Provider value={{
-            theMessages, addMessage, releaseMessage, updateMessage
+            messages, addMessage, deleteMessage, updateMessage
         }}>
             {props.children}
         </MessageContext.Provider>

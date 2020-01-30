@@ -1,20 +1,20 @@
-import React, { useContext } from "react"
-import { MessageContext } from "./MessageProvider"
-import Message from "./Message"
-import "./Messages.css"
-export default (props) => {
-    const { messages } = useContext(MessageContext)
-    return (
-        <div className="messages">
-            <h1>Messages</h1>
-            <button onClick={() => props.history.push("/messages/create")}>
-                Add message
-            </button>
-            <article className="messageList">
-                {
-                    messages.map(mes => <Message key={mes.id} message={mes} />)
-                }
-            </article>
-        </div>
-    )
-}
+// import React, { useContext } from "react"
+// import { MessageContext } from "./MessageProvider"
+// import Message from "./Message"
+// import "./Messages.css"
+// export default (props) => {
+//     const { messages } = useContext(MessageContext)
+//     return (
+//         <div className="messages">
+//             <h1>Messages</h1>
+//             <button onClick={() => props.history.push("/messages/create")}>
+//                 Add message
+//             </button>
+//             <article className="messageList">
+//                 {
+//                     messages.map(mes => <Message key={mes.id} message={mes} />)
+//                 }
+//             </article>
+//         </div>
+//     )
+// }

@@ -1,40 +1,45 @@
 import React, { useContext, useRef } from "react"
-import { MessageContext } from "./messageProvider"
-import "./messages.css"
+import { MessageContext } from "./MessageProvider"
+import "./Messages.css"
+import { useState } from "react"
+
 export default props => {
     const { addMessage } = useContext(MessageContext)
-    const messageMessages = useRef("");
+    const [MessageName, changeMessageNameStateTo] = useState("")
+    const name = useRef(null)
+
+    const onUserTypingSomething = e => {
+        changeMessageNameStateTo(e.target.value)
+    }
+
     const constructNewMessage = () => {
-            addMessage({
-                messages: messageMessages.current.value,
-            })
-        }
+        addMessage({
+            messages: name.current.value
+        })
+        .then(() => {
+            changeMessageNameStateTo("")
+        })
+    }
+
     return (
         <form className="messageForm">
-            <h2 className="messageForm__title">New message</h2>
-            <div className="form-group">
-                    <label htmlFor="messageName">message messages </label>
+            <h2 className="messageForm__title">New Message</h2>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="messages">Message name: </label>
                     <input
                         type="text"
-                        id="messageMessages"
-                        ref={messageMessages}
+                        id="messages"
+                        ref={name}
+                        value={MessageName}
+                        onChange={onUserTypingSomething}
                         required
                         autoFocus
                         className="form-control"
-                        placeholder="message Messages"
+                        placeholder="Message name"
                     />
-            </div>
-            <div className="form-group">
-                <label htmlFor="messages">Messages </label>
-                <input
-                        type="text"
-                        id="messages"
-                        ref={messageMessages}
-                        className="form-control"
-                        placeholder="Message"
-                />
-            </div>
-    
+                </div>
+            </fieldset>
             <button type="submit"
                 onClick={
                     evt => {
@@ -43,7 +48,7 @@ export default props => {
                     }
                 }
                 className="btn btn-primary">
-                Save message
+                Save Message
             </button>
         </form>
     )
