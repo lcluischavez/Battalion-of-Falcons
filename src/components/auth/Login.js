@@ -10,7 +10,7 @@ const Login = props => {
     const address = useRef()
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8080/users?email=${email.current.value}`)
+        return fetch(`http://localhost:8088/users?email=${email.current.value}`)
             .then(_ => _.json())
             .then(user => {
                 if (user.length) {
@@ -26,7 +26,7 @@ const Login = props => {
         existingUserCheck()
             .then(exists => {
                 if (exists && exists.password === password.current.value) {
-                    localStorage.setItem("currentUSer", exists.id)
+                    localStorage.setItem("currentUser", exists.id)
                     props.history.push("/")
                 } else if (exists && exists.password !== password.current.value) {
                     window.alert("Password does not match")
