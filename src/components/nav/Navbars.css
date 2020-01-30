@@ -1,0 +1,18 @@
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    border: initial;
+    background-color: lightgray;
+    height: 40px;
+    border-radius: 15%;
+}
+
+.navbar__item {
+    flex-basis: 20%;
+    list-style-type: none;
+}
+
+.navbar__link{
+    color: black;
+}
