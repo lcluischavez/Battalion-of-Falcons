@@ -7,7 +7,7 @@ import Register from "./auth/Register"
 import "./Nutshell2.css"
 
 export default () => (
-    <>
+    <> 
         <Route render={() => {
             if (localStorage.getItem("currentUser")) {
                 return (
