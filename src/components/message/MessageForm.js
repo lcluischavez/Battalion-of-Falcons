@@ -12,7 +12,6 @@ export default props => {
         changeMessageNameStateTo(e.target.value)
     }
     
-
     const constructNewMessage = () => {
         addMessage({
             messages: name.current.value
