@@ -8,6 +8,9 @@ export default (props) => {
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/">Nutshell</Link>
             </li>
+             <li className="navbar__item">
+                <Link className="navbar__link" to="/messages/create">Add Message</Link>
+            </li>
 
             {
                 localStorage.getItem("currentUser")

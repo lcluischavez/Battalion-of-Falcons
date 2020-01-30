@@ -11,6 +11,7 @@ export default props => {
     const onUserTypingSomething = e => {
         changeMessageNameStateTo(e.target.value)
     }
+    
 
     const constructNewMessage = () => {
         addMessage({
