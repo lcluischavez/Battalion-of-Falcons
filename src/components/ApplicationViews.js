@@ -1,22 +1,20 @@
 import React from "react"
 import { Route } from "react-router-dom"
-import { FriendProvider } from "./friend/FriendProvider"
-import FriendList from "./friend/FriendList"
-import FriendForm from "./fried/FriendForm"
+
+
+// import MessageList from "./message/MessageList"
+// import MessageDetails from "./message/MessageDetails"
+import { MessageProvider } from "./message/MessageProvider"
+import MessageForm from "./message/MessageForm"
 
 export default (props) => {
     return (
         <>
-            <FriendProvider>
-                    <Route exact path="/">
-                        <FriendList />
-                    </Route>
-                    <Route exact path="/friends/create">
-                    props => <FriendForm {...props} />
-                        <FriendForm />
-                    </Route>
-               
-            </FriendProvider>
+            <MessageProvider>
+                <Route exact path="/messages/create">
+                    <MessageForm />
+                </Route>
+            </MessageProvider>
         </>
     )
 }

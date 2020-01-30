@@ -8,4 +8,3 @@ ReactDOM.render(
         <Nutshell2 />
     </Router>
     , document.getElementById("root"))
-
