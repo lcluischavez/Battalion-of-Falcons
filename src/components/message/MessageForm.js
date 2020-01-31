@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from "react"
+import { useState, useEffect } from "react"
 import { MessageContext } from "./MessageProvider"
 import "./Messages.css"
-import { useState } from "react"
 
 export default props => {
     const { addMessage } = useContext(MessageContext)
