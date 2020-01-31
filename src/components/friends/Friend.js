@@ -1,15 +1,9 @@
 import React from "react"
 import "./Friends.css"
 
-export default ({ friend }) => {
-    const { deleteFriend } = useContext(FriendContext)
-    return (
-      <section className="friend">
+export default ({ friend }) => (
+    <section className="friend">
+        <div className="friend__check">{friend.check}</div>
+    </section>
+)
 
-        <h3 className="friend__name">{friend.user.userName}</h3>
-
-        <button onClick={() => { deleteFriend(friend) }}>Delete Freind</button>
-
-      </section>
-    );
-  };

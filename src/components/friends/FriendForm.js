@@ -1,49 +1,40 @@
 import React, { useContext, useRef } from "react"
 import { FriendContext } from "./FriendProvider"
 import "./Friends.css"
-import { useState } from "react"
-import { UserContext } from "../user/UserProvider"
-
 
 export default props => {
-
-    const onUserTypingSomething = e => {
-        changeFriendNameState(e.target.value)
-    }
-    
+    const { addFriend } = useContext(FriendContext)
+    const friendCheck = useRef("")
+ 
 
     const constructNewFriend = () => {
-        addFriend({
-            friend: name.current.value
-        })
-        .then(() => {
-            changeFriendNameState("")
-        })
-    }
+            addFriend({
+                check: friendCheck.current.value,
+                
+
+            })
+        }
+    
 
     return (
         <form className="friendForm">
             <h2 className="friendForm__title">New Friend</h2>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="friend">Friend name: </label>
-                    <input
-                        type="text"
-                        id="friend"
-                        ref={name}
-                        value={friendName}
-                        onChange={onUserTypingSomething}
-                        required
-                        autoFocus
-                        className="form-control"
-                        placeholder="Friend name"
-                    />
-                </div>
-            </fieldset>
+            <div className="form-group">
+                <label htmlFor="friendCheck">Check</label>
+                <input
+                    type="text"
+                    id="friendCheck"
+                    ref={friendCheck}
+                    required
+                    autoFocus
+                    className="form-control"
+                    placeholder="Check"
+                />
+            </div>
             <button type="submit"
                 onClick={
                     evt => {
-                        evt.preventDefault()
+                        evt.preventDefault() // Prevent browser from submitting the form
                         constructNewFriend()
                     }
                 }

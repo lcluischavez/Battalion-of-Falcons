@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from "react"
 
-
-
+/*
+    The context is imported and used by individual components
+    that need data
+*/
 export const FriendContext = React.createContext()
 
+/*
+ This component establishes what data can be used.
+ */
 export const FriendProvider = (props) => {
-    const [friend, changeFriendState] = useState([])
+    const [friends, setFriends] = useState([])
 
     const getFriends = () => {
         return fetch("http://localhost:8088/friends")
             .then(res => res.json())
-            .then(changeFriendState)
+            .then(setFriends)
     }
 
     const addFriend = friend => {
@@ -24,34 +29,21 @@ export const FriendProvider = (props) => {
             .then(getFriends)
     }
 
-    const deleteFriend = friend => {
-        return fetch(`http://localhost:8088/friends/${friend.id}`, {
-            method: "DELETE"
-        })
-        .then(getFriends)
-    }
-
-    const updateFriend = friend => {
-        return fetch(`http://localhost:8088/friends/${friend.id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(friend)
-        })
-            .then(getFriends)
-    }
-
+    /*
+        Load all animals when the component is mounted. Ensure that
+        an empty array is the second argument to avoid infinite loop.
+    */
     useEffect(() => {
         getFriends()
     }, [])
 
     useEffect(() => {
-    }, [friend])
+        console.log("****  LOCATION APPLICATION STATE CHANGED  ****")
+    }, [friends])
 
     return (
         <FriendContext.Provider value={{
-            friend, addFriend, deleteFriend, updateFriend
+            friends, addFriend
         }}>
             {props.children}
         </FriendContext.Provider>
