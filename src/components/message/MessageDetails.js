@@ -5,8 +5,7 @@ import "./Messages.css"
 
 export default (props) => {
     const { messages, deleteMessage } = useContext(MessageContext)
-
-    /*  
+    /*
         This line of code will be explained in the next
         section of the chapter.
     */
