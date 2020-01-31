@@ -19,18 +19,8 @@ export default (props) => {
                     <h2>Tasks</h2>
                     <TaskForm />
                     <TaskList />
-                    <h2>Messages</h2>
                 </Route>
             </TaskProvider>
-
-            {/* <TaskProvider>
-                <Route exact path="/tasks" render={
-                    props => <TaskList {...props} />
-                } />
-                <Route exact path="/tasks/create">
-                    <TaskForm/>
-                </Route>
-            </TaskProvider> */}
 
             <MessageProvider>
                 <Route exact path="/messages/create">

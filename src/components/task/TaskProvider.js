@@ -25,14 +25,14 @@ export const TaskProvider = (props) => {
             .then(getTasks)
     }
     /*
-        Load all animals when the component is mounted. Ensure that
+        Load all tasks when the component is mounted. Ensure that
         an empty array is the second argument to avoid infinite loop.
     */
     useEffect(() => {
         getTasks()
     }, [])
     useEffect(() => {
-        console.log("****  LOCATION APPLICATION STATE CHANGED  ****")
+        console.log("****  TASK APPLICATION STATE CHANGED  ****")
     }, [tasks])
     return (
         <TaskContext.Provider value={{
