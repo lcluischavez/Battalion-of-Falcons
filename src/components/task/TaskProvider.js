@@ -28,6 +28,13 @@ export const TaskProvider = (props) => {
             .then(getTasks)
     }
 
+    const deleteTask = task => {
+        return fetch(`http://localhost:8088/tasks/${task.id}`, {
+            method: "DELETE"
+        })
+        .then(getTasks)
+    }
+
     /*
         Load all animals when the component is mounted. Ensure that
         an empty array is the second argument to avoid infinite loop.
@@ -42,7 +49,7 @@ export const TaskProvider = (props) => {
 
     return (
         <TaskContext.Provider value={{
-            tasks, addTask
+            tasks, addTask, deleteTask
         }}>
             {props.children}
         </TaskContext.Provider>

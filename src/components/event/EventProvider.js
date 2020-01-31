@@ -29,6 +29,13 @@ export const EventProvider = (props) => {
             .then(getEvents)
     }
 
+     const deleteEvent = event => {
+        return fetch(`http://localhost:8088/events/${event.id}`, {
+            method: "DELETE"
+        })
+        .then(getEvents)
+    }
+
     /*
         Load all animals when the component is mounted. Ensure that
         an empty array is the second argument to avoid infinite loop.
@@ -43,7 +50,7 @@ export const EventProvider = (props) => {
 
     return (
         <EventContext.Provider value={{
-            events, addEvent
+            events, addEvent, deleteEvent
         }}>
             {props.children}
         </EventContext.Provider>
