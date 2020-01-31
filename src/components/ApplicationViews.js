@@ -10,44 +10,96 @@ import TaskForm from "./task/TaskForm";
 import EventForm from "./event/EventForm";
 import ArticleForm from "./article/ArticleForm";
 
+import { MessageProvider } from "./message/MessageProvider";
+import MessageForm from "./message/MessageForm";
+import MessageList from "./message/MessageList";
+import MessageDetails from "./message/MessageDetails";
+
+import FriendList from "./friends/FriendList";
+import FriendForm from "./friends/FriendForm";
+import { FriendProvider } from "./friends/FriendProvider";
+//import FriendDetails from "./friend/FriendDetails";
+
+
 export default props => {
     return (
         <>
             <TaskProvider>
                 <EventProvider>
                     <ArticleProvider>
-                        {/* Render the location list when http://localhost:3000/ */}
-                        <Route
-                            exact
-                            path="/"
-                            render={props => <TaskList {...props} />}
-                        />
-                        <Route exact path="/tasks/create">
-                            <TaskForm />
-                        </Route>
-                        <Route
-                            exact
-                            path="/"
-                            render={props => <EventList {...props} />}
-                        />
-                        <Route exact path="/events/create">
-                            <EventForm />
-                        </Route>
-                        <Route
-                            exact
-                            path="/"
-                            render={props => <ArticleList {...props} />}
-                        />
-                        <Route exact path="/articles/create">
-                            <ArticleForm />
-                        </Route>
+                        <FriendProvider>
+                            <MessageProvider>
+
+                                {/* Render the location list when http://localhost:3000/ */}
+                                <Route
+                                    exact
+                                    path="/"
+                                    render={props => <TaskList {...props} />}
+                                />
+                                <Route exact path="/tasks/create">
+                                    <TaskForm />
+                                </Route>
+
+                                <Route
+                                    exact
+                                    path="/"
+                                    render={props => <EventList {...props} />}
+                                />
+                                <Route exact path="/events/create">
+                                    <EventForm />
+                                </Route>
+
+                                <Route
+                                    exact
+                                    path="/"
+                                    render={props => <ArticleList {...props} />}
+                                />
+                                <Route exact path="/articles/create">
+                                    <ArticleForm />
+                                </Route>
+
+                                
+                            </MessageProvider>
+                        </FriendProvider>
                     </ArticleProvider>
                 </EventProvider>
             </TaskProvider>
 
+            <FriendProvider>
+                <Route exact path="/friends" render={
+                    props => <FriendList {...props} />
+                } />
+                <Route exact path="/friends/create">
+                    <FriendForm />
+                </Route>
+                {/* <Route path="/friends/:friendId(\d+)" render={
+                    props => <FriendDetails {...props} />
+                } /> */}
+            </FriendProvider>
+
+            <MessageProvider>
+                <Route exact path="/messages" render={
+                    props => <MessageList {...props} />
+                } />
+                <Route exact path="/messages/create">
+                    <MessageForm />
+                </Route>
+                <Route path="/messages/:messageId(\d+)" render={
+                    props => <MessageDetails {...props} />
+                } />
+            </MessageProvider>
         </>
     );
 };
+
+
+
+
+
+
+
+
+
 
 {/* <TaskProvider>
 <Route
