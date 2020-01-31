@@ -1,33 +1,3 @@
-// import React, { useContext } from "react"
-// import { MessageContext } from "./MessageProvider"
-// import Message from "./Message"
-// import "./Messages.css"
-
-// export default (props) => {
-//     const { messages } = useContext(MessageContext)
-
-//     return (
-//         <>
-//             <h1>Messages</h1>
-
-//             <button onClick={() => props.history.push("/messages/create")}>
-//                 Message
-//             </button>
-//             <div className="messages">
-//                 {
-//                     messages.map(message => {
-//                         return <Message key={message.id} animal={message} />
-//                     })
-//                 }
-//             </div>
-//         </>
-//     )
-// }
-
-
-
-
-
 import React, { useContext } from "react"
 import { MessageContext } from "./MessageProvider"
 import Message from "./Message"
@@ -35,13 +5,24 @@ import "./Messages.css"
 
 export default (props) => {
     const { messages } = useContext(MessageContext)
+
     return (
-        <div className="messages">
-            <article className="messageList">
+        <>
+            <h1>Messages</h1>
+
+            <button onClick={() => props.history.push("/messages/create")}>
+                Message
+            </button>
+            <div className="messages">
                 {
-                    messages.map(mes => <Message key={mes.id} task={mes} />)
+                    messages.map(message => {
+                        return <Message key={message.id} animal={message} />
+                    })
                 }
-            </article>
-        </div>
+            </div>
+        </>
     )
 }
+
+
+
