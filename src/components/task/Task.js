@@ -1,6 +1,7 @@
 import React from "react"
 import "./Tasks.css"
 
+
 export default ({ task }) => (
     <section className="task">
         <h3 className="task__name">{task.name}</h3>
@@ -8,3 +9,4 @@ export default ({ task }) => (
         <div className="task__exCompDate">{task.exCompDate}</div>
     </section>
 )
+

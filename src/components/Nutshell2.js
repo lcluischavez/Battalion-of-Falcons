@@ -20,8 +20,8 @@ export default () => (
                 return <Redirect to="/login" />
             }
         }} />
-
         <Route path="/login" render={props => <Login {...props} />} />
         <Route path="/register" render={props => <Register {...props} />} />
     </>
 )
+
