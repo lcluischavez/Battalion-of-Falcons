@@ -56,68 +56,26 @@ export default props => {
                                     <ArticleForm />
                                 </Route>
 
-                                <Route exact path="/" render={
-                                    props => <MessageList {...props} />
+                                <Route exact 
+                                path="/" render={props => <MessageList {...props} />
                                 } />
                                 <Route exact path="/messages/create">
                                     <MessageForm />
                                 </Route>
                                 
+                                <Route exact path="/" render={
+                                    props => <FriendList {...props} />
+                                } />
+                                <Route exact path="/friends/create">
+                                    <FriendForm />
+                                </Route>
                             </MessageProvider>
                         </FriendProvider>
                     </ArticleProvider>
                 </EventProvider>
             </TaskProvider>
 
-            <FriendProvider>
-                <Route exact path="/friends" render={
-                    props => <FriendList {...props} />
-                } />
-                <Route exact path="/friends/create">
-                    <FriendForm />
-                </Route>
-            </FriendProvider>
-
         </>
     );
 };
 
-
-
-
-
-
-
-
-
-
-{/* <TaskProvider>
-<Route
-    exact
-    path="/tasks"
-    render={props => <TaskList {...props} />}
-/>
-
-</TaskProvider>
-
-<EventProvider>
-<Route
-    exact
-    path="/events"
-    render={props => <EventList {...props} />}
-/>
-</EventProvider>
-
-<ArticleProvider>
-<Route
-    exact
-    path="/articles"
-    render={props => <ArticleList {...props} />}
-/>
-</ArticleProvider>
-
-<MessageProvider>
-    <Route exact path="/messages" render={
-        props => <MessageList {...props} />
-    } />
-</MessageProvider> */}
