@@ -1,5 +1,6 @@
-import React from "react"
-import "./Articles.css"
+import React from "react";
+import "./Articles.css";
+
 
 export default ({ article }) => (
     <section className="article">
@@ -8,4 +9,4 @@ export default ({ article }) => (
         <div className="article__timeStamp">{article.timeStamp}</div>
         <div className="article__url">{article.url}</div>
     </section>
-)
+);

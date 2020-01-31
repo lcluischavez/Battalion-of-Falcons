@@ -39,8 +39,6 @@ export default props => {
                     type="text"
                     id="eventDate"
                     ref={eventDate}
-                    required
-                    autoFocus
                     className="form-control"
                     placeholder="Date"
                 />
@@ -51,8 +49,6 @@ export default props => {
                     type="text"
                     id="eventLocation"
                     ref={eventLocation}
-                    required
-                    autoFocus
                     className="form-control"
                     placeholder="Location"
                 />

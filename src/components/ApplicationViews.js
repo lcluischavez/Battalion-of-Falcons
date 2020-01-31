@@ -1,23 +1,23 @@
 import React from "react";
 import { Route } from "react-router-dom";
+
 import { TaskProvider } from "./task/TaskProvider";
 import { EventProvider } from "./event/EventProvider";
 import { ArticleProvider } from "./article/ArticleProvider";
+import { MessageProvider } from "./message/MessageProvider";
+import { FriendProvider } from "./friends/FriendProvider";
+
 import TaskList from "./task/TaskList";
 import EventList from "./event/EventList";
 import ArticleList from "./article/ArticleList";
+import MessageList from "./message/MessageList";
+import FriendList from "./friends/FriendList";
+
 import TaskForm from "./task/TaskForm";
 import EventForm from "./event/EventForm";
 import ArticleForm from "./article/ArticleForm";
-
-import { MessageProvider } from "./message/MessageProvider";
 import MessageForm from "./message/MessageForm";
-import MessageList from "./message/MessageList";
-import MessageDetails from "./message/MessageDetails";
-
-import FriendList from "./friends/FriendList";
 import FriendForm from "./friends/FriendForm";
-import { FriendProvider } from "./friends/FriendProvider";
 
 export default props => {
     return (
