@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react"
 
+
+
 export const FriendContext = React.createContext()
 
 export const FriendProvider = (props) => {
+    const [friend, changeFriendState] = useState([])
 
-    const [friends, setFriends] = useState([])
-
-    const usersFreinds = () => {
-        return fetch("http://localhost:8088/friends?_expand=user")
+    const getFriends = () => {
+        return fetch("http://localhost:8088/friends")
             .then(res => res.json())
-            .then(setFriends)
+            .then(changeFriendState)
     }
 
     const addFriend = friend => {
@@ -18,7 +19,6 @@ export const FriendProvider = (props) => {
             headers: {
                 "Content-Type": "application/json"
             },
-
             body: JSON.stringify(friend)
         })
             .then(getFriends)
@@ -26,7 +26,18 @@ export const FriendProvider = (props) => {
 
     const deleteFriend = friend => {
         return fetch(`http://localhost:8088/friends/${friend.id}`, {
-            method: "DELETE",
+            method: "DELETE"
+        })
+        .then(getFriends)
+    }
+
+    const updateFriend = friend => {
+        return fetch(`http://localhost:8088/friends/${friend.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(friend)
         })
             .then(getFriends)
     }
@@ -36,12 +47,11 @@ export const FriendProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log("***Friends APP STATE CHANGED")
-    }, [friends])
+    }, [friend])
 
     return (
         <FriendContext.Provider value={{
-            friends, addFriend, deleteFriend
+            friend, addFriend, deleteFriend, updateFriend
         }}>
             {props.children}
         </FriendContext.Provider>

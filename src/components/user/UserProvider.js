@@ -30,12 +30,12 @@ export const UserProvider = (props) => {
 
     useEffect(() => {
         console.log("****  USER APPLICATION STATE CHANGED  ****")
-        console.log(users)
-    }, [users])
+        console.log(user)
+    }, [user])
 
     return (
         <UserContext.Provider value={{
-            users, addUser
+            user, addUser
         }}>
             {props.children}
         </UserContext.Provider>
