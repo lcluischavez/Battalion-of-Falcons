@@ -1,14 +1,9 @@
-// import React from "react"
-// import "./Friends.css"
+import React from "react"
+import "./Friends.css"
 
-// export default ({ friend }) => (
-//     <section className="friend">
-//         <h3 className="friend__name">{friend.name}</h3>
+export default ({ friend }) => (
+    <section className="friend">
+        <div className="friend__check">{friend.check}</div>
+    </section>
+)
 
-//         <ul>
-//             {
-//                 friend.map(e => <li key={e.id}>{e.name}</li>)
-//             }
-//         </ul>
-//     </section>
-// )
