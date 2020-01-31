@@ -18,8 +18,6 @@ import MessageDetails from "./message/MessageDetails";
 import FriendList from "./friends/FriendList";
 import FriendForm from "./friends/FriendForm";
 import { FriendProvider } from "./friends/FriendProvider";
-//import FriendDetails from "./friend/FriendDetails";
-
 
 export default props => {
     return (
@@ -58,6 +56,12 @@ export default props => {
                                     <ArticleForm />
                                 </Route>
 
+                                <Route exact path="/" render={
+                                    props => <MessageList {...props} />
+                                } />
+                                <Route exact path="/messages/create">
+                                    <MessageForm />
+                                </Route>
                                 
                             </MessageProvider>
                         </FriendProvider>
@@ -72,22 +76,8 @@ export default props => {
                 <Route exact path="/friends/create">
                     <FriendForm />
                 </Route>
-                {/* <Route path="/friends/:friendId(\d+)" render={
-                    props => <FriendDetails {...props} />
-                } /> */}
             </FriendProvider>
 
-            <MessageProvider>
-                <Route exact path="/messages" render={
-                    props => <MessageList {...props} />
-                } />
-                <Route exact path="/messages/create">
-                    <MessageForm />
-                </Route>
-                <Route path="/messages/:messageId(\d+)" render={
-                    props => <MessageDetails {...props} />
-                } />
-            </MessageProvider>
         </>
     );
 };
@@ -124,4 +114,10 @@ export default props => {
     path="/articles"
     render={props => <ArticleList {...props} />}
 />
-</ArticleProvider> */}
+</ArticleProvider>
+
+<MessageProvider>
+    <Route exact path="/messages" render={
+        props => <MessageList {...props} />
+    } />
+</MessageProvider> */}
