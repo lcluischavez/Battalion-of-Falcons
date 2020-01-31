@@ -5,10 +5,7 @@
 
 // export default (props) => {
 //     const { messages, deleteMessage } = useContext(MessageContext)
-//     /*
-//         This line of code will be explained in the next
-//         section of the chapter.
-//     */
+    
 //     const chosenMessageId = parseInt(props.match.params.messageId, 10)
 
 //     const message = messages.find(m => m.id === chosenMessageId) || {}

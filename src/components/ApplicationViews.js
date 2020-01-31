@@ -27,7 +27,6 @@ export default props => {
                     <ArticleProvider>
                         <FriendProvider>
                             <MessageProvider>
-
                                 {/* Render the location list when http://localhost:3000/ */}
                                 <Route
                                     exact
