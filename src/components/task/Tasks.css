@@ -1,6 +1,7 @@
 .taskList {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
 }
 .task {
@@ -13,3 +14,16 @@ fieldset {
     margin: 0.5rem 0;
     padding: 0.5rem;
 }
+
+/* .tasks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+  
+.task {
+    flex-basis: 28%;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid goldenrod;
+} */
