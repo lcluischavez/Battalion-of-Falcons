@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 import { Route } from "react-router-dom";
 
 //import EventList from "./event/EventList";
@@ -10,6 +10,12 @@ import { Route } from "react-router-dom";
 import TaskList from "./task/TaskList";
 import { TaskProvider } from "./task/TaskProvider";
 import TaskForm from "./task/TaskForm";
+
+import FriendList from "./friends/FriendList";
+import FriendForm from "./friends/FriendForm";
+import { FriendProvider } from "./friends/FriendProvider";
+//import FriendDetails from "./friend/FriendDetails";
+
 
 import MessageList from "./message/MessageList"
 import MessageDetails from "./message/MessageDetails"
@@ -48,6 +54,18 @@ export default (props) => {
                     props => <MessageDetails {...props} />
                 } />
             </MessageProvider>
+
+            <FriendProvider>
+                <Route exact path="/friends" render={
+                    props => <FriendList {...props} />
+                } />
+                <Route exact path="/friends/create">
+                    <FriendForm />
+                </Route>
+                {/* <Route path="/friends/:friendId(\d+)" render={
+                    props => <FriendDetails {...props} />
+                } /> */}
+            </FriendProvider>
         </>
     )
 }
