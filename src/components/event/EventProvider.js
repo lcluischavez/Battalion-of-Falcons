@@ -45,7 +45,7 @@ export const EventProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log("****  LOCATION APPLICATION STATE CHANGED  ****")
+        console.log("****  event APPLICATION STATE CHANGED  ****")
     }, [events])
 
     return (

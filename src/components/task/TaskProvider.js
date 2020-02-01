@@ -44,7 +44,7 @@ export const TaskProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log("****  LOCATION APPLICATION STATE CHANGED  ****")
+        console.log("****  task APPLICATION STATE CHANGED  ****")
     }, [tasks])
 
     return (

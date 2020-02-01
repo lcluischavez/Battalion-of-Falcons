@@ -2,7 +2,6 @@ import React, { useContext } from "react"
 import { TaskContext } from "./TaskProvider"
 import "./Tasks.css"
 
-
 export default ({ task, match, history }) => {
     const { tasks, deleteTask } = useContext(TaskContext)
  

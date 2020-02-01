@@ -2,7 +2,6 @@ import React, { useContext } from "react"
 import { EventContext } from "./EventProvider"
 import "./Events.css"
 
-
 export default ({ event, match, history }) => {
     const { events, deleteEvent } = useContext(EventContext)
 

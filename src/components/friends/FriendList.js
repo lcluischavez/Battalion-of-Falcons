@@ -13,7 +13,7 @@ export default (props) => {
                 Add Friend
             </button>
             <article className="friendList">
-                {friends.map(friend => <Friend key={friend.id} friend={friend} />)}
+                {friends.map(friend => <Friend key={friend.id} friend={friend} {...props } />)}
             </article>
         </div>
     )
