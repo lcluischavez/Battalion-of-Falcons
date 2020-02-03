@@ -42,23 +42,11 @@ address {
   display: flex;
 }
 
-.leftSection {
-  flex-basis: 25%;
-  flex-direction: column;
-  resize: both;
-  overflow: auto;
-  scroll-behavior: auto;
-}
 
-.centerSection {
-  flex-basis: 50%;
-  flex-direction: column;
-  resize: both;
-  overflow: auto;
-  scroll-behavior: auto;
+form {  
+    position: fixed;
+    margin-left: 450px;
+    margin-right: 100px;
+    margin-top: 80px;
+    color: white;
 }
-
-.rightSection {
-  flex-basis: 25%;
-  flex-direction: column;
-}  

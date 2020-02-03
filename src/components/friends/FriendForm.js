@@ -27,7 +27,7 @@ export default props => {
 }
 
     return (
-        <form className="friendForm">
+        <form id="friendForm">
             <h2 className="friendForm__title">New Friend</h2>
             <div className="form-group">
                 <label htmlFor="friendCheck">Check</label>
