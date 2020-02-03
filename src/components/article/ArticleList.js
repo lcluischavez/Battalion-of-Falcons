@@ -13,9 +13,9 @@ export default (props) => {
                 Add Article
             </button>
             <article className="articleList">
-                {articles.map(article => <Article key={article.id} article={article} />)}
+                {articles.map(article => <Article key={article.id} article={article} {...props} />)}
             </article>
         </div>
     )
 }
-
+ 

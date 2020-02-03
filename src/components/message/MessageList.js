@@ -12,7 +12,7 @@ export default (props) => {
             </button>
             <article className="messageList">
                 {
-                    messages.map(mes => <Message key={mes.id} message={mes} />)
+                    messages.map(mes => <Message key={mes} message={mes} {...props} />)
                 }
             </article>
         </div>

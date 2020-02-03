@@ -29,6 +29,13 @@ export const ArticleProvider = (props) => {
             .then(getArticles)
     }
 
+     const deleteArticle = article => {
+        return fetch(`http://localhost:8088/articles/${article.id}`, {
+            method: "DELETE"
+        })
+        .then(getArticles)
+    }
+
     /*
         Load all animals when the component is mounted. Ensure that
         an empty array is the second argument to avoid infinite loop.
@@ -38,12 +45,12 @@ export const ArticleProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log("****  LOCATION APPLICATION STATE CHANGED  ****")
+        console.log("****  article APPLICATION STATE CHANGED  ****")
     }, [articles])
 
     return (
         <ArticleContext.Provider value={{
-            articles, addArticle
+            articles, addArticle, deleteArticle
         }}>
             {props.children}
         </ArticleContext.Provider>
