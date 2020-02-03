@@ -59,11 +59,14 @@ export default props => {
                                     </Route>
 
                                     <Route exact 
-                                    path="/" render={props => <MessageList {...props} />
+                                        path="/" render={props => <MessageList {...props} />
                                     } />
                                     <Route exact path="/messages/create">
                                         <MessageForm />
                                     </Route>
+                                    <Route path="/messages/edit/:messageId(\d+)" render={
+                                        props => <MessageForm {...props} />
+                                    } />
                                     
                                     <Route exact path="/" render={
                                         props => <FriendList {...props} />
