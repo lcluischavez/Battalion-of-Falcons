@@ -5,7 +5,6 @@ import { UserContext } from "../user/UserProvider"
 import "./Messages.css"
 
 export default props => {
-
     const { user } = useContext(UserContext)
     const { addMessage } = useContext(MessageContext)
     const messageMessage = useRef("")

@@ -13,7 +13,7 @@ import ArticleForm from "./article/ArticleForm";
 import { MessageProvider } from "./message/MessageProvider";
 import MessageForm from "./message/MessageForm";
 import MessageList from "./message/MessageList";
-import MessageDetails from "./message/MessageDetails";
+// import MessageDetails from "./message/MessageDetails";
 
 import FriendList from "./friends/FriendList";
 import FriendForm from "./friends/FriendForm";
@@ -59,11 +59,14 @@ export default props => {
                                     </Route>
 
                                     <Route exact 
-                                    path="/" render={props => <MessageList {...props} />
+                                        path="/" render={props => <MessageList {...props} />
                                     } />
                                     <Route exact path="/messages/create">
                                         <MessageForm />
                                     </Route>
+                                    <Route path="/messages/edit/:messageId(\d+)" render={
+                                        props => <MessageForm {...props} />
+                                    } />
                                     
                                     <Route exact path="/" render={
                                         props => <FriendList {...props} />

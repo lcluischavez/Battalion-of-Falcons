@@ -6,6 +6,7 @@ import "./Messages.css"
 export default (props) => {
 
     const { messages } = useContext(MessageContext)
+    
 console.log(messages)
     return (
         <div className="messages">
