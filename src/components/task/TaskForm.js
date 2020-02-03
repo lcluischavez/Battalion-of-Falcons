@@ -13,10 +13,8 @@ export default props => {
                 name: taskName.current.value,
                 task: taskTask.current.value,
                 exCompDate: taskExCompDate.current.value,                
-
             })
         }
-    
 
     return (
         <form className="taskForm">
@@ -70,4 +68,3 @@ export default props => {
         </form>
     )
 }
-

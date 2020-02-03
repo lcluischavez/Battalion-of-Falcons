@@ -45,7 +45,7 @@ export const MessageProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log(messages)
+        console.log("****  friend APPLICATION STATE CHANGED  ****")
     }, [messages])
 
     return (

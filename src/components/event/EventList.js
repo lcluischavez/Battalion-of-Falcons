@@ -13,7 +13,7 @@ export default (props) => {
                 Add Event
             </button>
             <article className="eventList">
-                {events.map(event => <Event key={event.id} event={event} />)}
+                {events.map(event => <Event key={event.id} event={event} {...props} />)}
             </article>
         </div>
     )

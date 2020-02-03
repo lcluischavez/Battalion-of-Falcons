@@ -56,13 +56,13 @@
 // }
 
 import React, { useContext, useRef } from "react"
+import { useState, useEffect } from "react"
 import { MessageContext } from "./MessageProvider"
 import "./Messages.css"
 
 export default props => {
     const { addMessage } = useContext(MessageContext)
     const messageMessage = useRef("")
-
 
     const constructNewMessage = () => {
             addMessage({
@@ -100,3 +100,12 @@ export default props => {
         </form>
     )
 }
+
+
+
+
+
+
+
+
+
