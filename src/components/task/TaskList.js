@@ -19,14 +19,12 @@ export default (props) => {
                 Add Task
             </button>
 
-            <h2>Done</h2>
             <article className="taskList">
                 {
                     doneTask.map(tas => <Task key={tas.id} task={tas} {...props} />)
                 }
             </article>
 
-            <h2>Open</h2>
             <article className="taskList">
                 {
                     openTask.map(tas => <Task key={tas.id} task={tas} {...props} />)
