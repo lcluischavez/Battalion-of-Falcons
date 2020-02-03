@@ -14,6 +14,11 @@ textarea {
 	line-height: 1.5;
 }
 
+body {
+  display: flex;
+  flex-direction: row;
+}
+
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Patua One', serif;
   letter-spacing: 2px;
@@ -32,3 +37,18 @@ strong {
 address {
   margin: 0 0 1.5em;
 }
+
+
+.leftSection {
+  flex-basis: 25%;
+
+}
+
+.centerSection {
+  flex-basis: 50%;
+}
+
+.rightSection {
+  flex-basis: 25%;
+
+} 

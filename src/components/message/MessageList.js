@@ -5,7 +5,7 @@ import "./Messages.css"
 export default (props) => {
     const { messages } = useContext(MessageContext)
     return (
-        <div className="messages">
+        <div className="messages" className="rightSection">
             <h1>Messages</h1>
             <button onClick={() => props.history.push("/messages/create")}>
                 Add message

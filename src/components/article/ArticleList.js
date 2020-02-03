@@ -7,7 +7,7 @@ export default (props) => {
     const { articles } = useContext(ArticleContext)
 
     return (
-        <div className="articles">
+        <div className="articles" className="centerSection">
             <h1>Articles</h1>
             <button onClick={() => props.history.push("/articles/create")}>
                 Add Article

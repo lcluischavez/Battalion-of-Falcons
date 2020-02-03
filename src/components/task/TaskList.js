@@ -7,7 +7,7 @@ export default (props) => {
     const { tasks } = useContext(TaskContext)
 
     return (
-        <div className="tasks">
+        <div className="tasks" className="leftSection">
             <h1>Tasks</h1>
             <button onClick={() => props.history.push("/tasks/create")}>
                 Add Task

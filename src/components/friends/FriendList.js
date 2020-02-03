@@ -7,7 +7,7 @@ export default (props) => {
     const { friends } = useContext(FriendContext)
 
     return (
-        <div className="friends">
+        <div className="friends" className="rightSection">
             <h1>Friends</h1>
             <button onClick={() => props.history.push("/friends/create")}>
                 Add Friend
