@@ -14,3 +14,9 @@ fieldset {
     margin: 0.5rem 0;
     padding: 0.5rem;
 }
+
+.freind__profilePicture {
+    background-color: cornflowerblue;
+    height: 100px;
+    width: 100px;
+}

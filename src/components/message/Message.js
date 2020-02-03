@@ -10,6 +10,7 @@ export default ({message, match, history}) => {
     return (
     <section className="message">
          <div className="message__message">{message.message}</div>
+         <div className="message__sender">{message.senderName}</div>
          <button className="btn--delete"
                 onClick={() => {
                 deleteMessage(message)

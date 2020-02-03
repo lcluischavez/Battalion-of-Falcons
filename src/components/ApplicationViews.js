@@ -19,6 +19,8 @@ import FriendList from "./friends/FriendList";
 import FriendForm from "./friends/FriendForm";
 import { FriendProvider } from "./friends/FriendProvider";
 
+import { UserProvider } from "./user/UserProvider"
+
 export default props => {
     return (
         <>
@@ -27,47 +29,49 @@ export default props => {
                     <ArticleProvider>
                         <FriendProvider>
                             <MessageProvider>
-                                {/* Render the location list when http://localhost:3000/ */}
-                                <Route
-                                    exact
-                                    path="/"
-                                    render={props => <TaskList {...props} />}
-                                />
-                                <Route exact path="/tasks/create">
-                                    <TaskForm />
-                                </Route>
+                                <UserProvider>
+                                    {/* Render the location list when http://localhost:3000/ */}
+                                    <Route
+                                        exact
+                                        path="/"
+                                        render={props => <TaskList {...props} />}
+                                    />
+                                    <Route exact path="/tasks/create">
+                                        <TaskForm />
+                                    </Route>
 
-                                <Route
-                                    exact
-                                    path="/"
-                                    render={props => <EventList {...props} />}
-                                />
-                                <Route exact path="/events/create">
-                                    <EventForm />
-                                </Route>
+                                    <Route
+                                        exact
+                                        path="/"
+                                        render={props => <EventList {...props} />}
+                                    />
+                                    <Route exact path="/events/create">
+                                        <EventForm />
+                                    </Route>
 
-                                <Route
-                                    exact
-                                    path="/"
-                                    render={props => <ArticleList {...props} />}
-                                />
-                                <Route exact path="/articles/create">
-                                    <ArticleForm />
-                                </Route>
+                                    <Route
+                                        exact
+                                        path="/"
+                                        render={props => <ArticleList {...props} />}
+                                    />
+                                    <Route exact path="/articles/create">
+                                        <ArticleForm />
+                                    </Route>
 
-                                <Route exact 
-                                path="/" render={props => <MessageList {...props} />
-                                } />
-                                <Route exact path="/messages/create">
-                                    <MessageForm />
-                                </Route>
-                                
-                                <Route exact path="/" render={
-                                    props => <FriendList {...props} />
-                                } />
-                                <Route exact path="/friends/create">
-                                    <FriendForm />
-                                </Route>
+                                    <Route exact 
+                                    path="/" render={props => <MessageList {...props} />
+                                    } />
+                                    <Route exact path="/messages/create">
+                                        <MessageForm />
+                                    </Route>
+                                    
+                                    <Route exact path="/" render={
+                                        props => <FriendList {...props} />
+                                    } />
+                                    <Route exact path="/friends/create">
+                                        <FriendForm />
+                                    </Route>
+                                </UserProvider>
                             </MessageProvider>
                         </FriendProvider>
                     </ArticleProvider>
