@@ -34,7 +34,7 @@ export default (props) => {
             </article>
 
             <article className="taskList">
-                {tasks.map(task => <Task key={task.id} task={task} />)}
+                {tasks.map(task => <Task key={task.id} task={task} {...props } />)}
             </article>
 
         </div>

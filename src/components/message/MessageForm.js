@@ -1,4 +1,5 @@
 import React, { useContext, useRef } from "react"
+import { useState, useEffect } from "react"
 import { MessageContext } from "./MessageProvider"
 import { UserContext } from "../user/UserProvider"
 import "./Messages.css"
@@ -47,3 +48,12 @@ console.log(foundMessageUser)
         </form>
     )
 }
+
+
+
+
+
+
+
+
+

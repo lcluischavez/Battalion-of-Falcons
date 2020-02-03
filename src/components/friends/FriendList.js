@@ -40,7 +40,7 @@ export default (props) => {
                     })
                 }
 
-                {currentUsersFreinds.map(friend => <Friend key={friend.id} friend={friend} />)}
+                {currentUsersFreinds.map(friend => <Friend key={friend.id} friend={friend} {...props}/>)}
 
             </article>
 

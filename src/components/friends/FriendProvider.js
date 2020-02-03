@@ -29,6 +29,13 @@ export const FriendProvider = (props) => {
             .then(getFriends)
     }
 
+    const deleteFriend = friend => {
+        return fetch(`http://localhost:8088/friends/${friend.id}`, {
+            method: "DELETE"
+        })
+        .then(getFriends)
+    }
+
     /*
         Load all animals when the component is mounted. Ensure that
         an empty array is the second argument to avoid infinite loop.
@@ -43,7 +50,7 @@ export const FriendProvider = (props) => {
 
     return (
         <FriendContext.Provider value={{
-            friends, addFriend
+            friends, addFriend, deleteFriend
         }}>
             {props.children}
         </FriendContext.Provider>

@@ -71,4 +71,3 @@ export default props => {
         </form>
     )
 }
-
