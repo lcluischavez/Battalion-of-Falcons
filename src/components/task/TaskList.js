@@ -13,6 +13,7 @@ export default (props) => {
     const openTask = userTasks.filter(task => task.done === false)
 
     return (
+        
         <div className="tasks">
 
             <h1>Tasks</h1>
@@ -20,13 +21,13 @@ export default (props) => {
             <button onClick={() => props.history.push("/tasks/create")}>
                 Add Task
             </button>
-
+            <h1>Done</h1>
             <article className="taskList">
                 {
                     doneTask.map(tas => <Task key={tas.id} task={tas} {...props} />)
                 }
             </article>
-
+            <h1>Open</h1>
             <article className="taskList">
                 {
                     openTask.map(tas => <Task key={tas.id} task={tas} {...props} />)
@@ -38,7 +39,6 @@ export default (props) => {
             </article>
 
         </div>
-
         
     )
 }
