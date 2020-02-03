@@ -27,6 +27,7 @@ const Login = props => {
             .then(exists => {
                 if (exists && exists.password === password.current.value) {
                     localStorage.setItem("currentUser", exists.id)
+                    // sessionStorage.setItem("currentSessionUser", exists.id)
                     props.history.push("/")
                 } else if (exists && exists.password !== password.current.value) {
                     window.alert("Password does not match")

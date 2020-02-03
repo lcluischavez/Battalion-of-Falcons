@@ -38,7 +38,7 @@ export const FriendProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log("****  LOCATION APPLICATION STATE CHANGED  ****")
+        console.log("****  FREINDS APPLICATION STATE CHANGED  ****")
     }, [friends])
 
     return (

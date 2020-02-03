@@ -7,6 +7,10 @@ export default ({ task }) => (
         <h3 className="task__name">{task.name}</h3>
         <div className="task__task">{task.task}</div>
         <div className="task__exCompDate">{task.exCompDate}</div>
+
+        <button className="taskButton">Done</button>
+
     </section>
 )
 
+// onClick={}

@@ -10,8 +10,6 @@ export default (props) => {
     const doneTask = userTasks.filter(task => task.done === true)
     const openTask = userTasks.filter(task => task.done === false)
 
-    console.log(userTasks)
-
     return (
         <div className="tasks">
 

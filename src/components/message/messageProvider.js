@@ -46,6 +46,10 @@ export const MessageProvider = (props) => {
 
     useEffect(() => {
         console.log(messages)
+        console.log("messages app state changed")
+        // if (checkedMessages.length == messages.length){
+        //     console.log("time to get messages")
+        // }
     }, [messages])
 
     return (

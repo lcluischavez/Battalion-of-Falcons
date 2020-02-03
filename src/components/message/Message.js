@@ -5,5 +5,6 @@ import "./Messages.css"
 export default ({ message }) => (
     <section className="message">
          <div className="message__message">{message.message}</div>
+         <div className="message__sender">{message.senderName}</div>
     </section>
 )
