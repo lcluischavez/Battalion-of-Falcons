@@ -44,6 +44,10 @@ export default (props) => {
 
             </article>
 
+            <article>
+                Freind Requests:
+            </article>
+
         </div>
     )
 }

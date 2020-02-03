@@ -77,7 +77,6 @@ export default props => {
                     </ArticleProvider>
                 </EventProvider>
             </TaskProvider>
-
         </>
     );
 };
