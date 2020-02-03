@@ -5,7 +5,6 @@ import { UserContext } from "../user/UserProvider"
 import "./Messages.css"
 
 export default props => {
-
     const { user } = useContext(UserContext)
     const { addMessage } = useContext(MessageContext)
     const messageMessage = useRef("")
@@ -16,7 +15,7 @@ console.log(foundMessageUser)
             addMessage({
                 message: messageMessage.current.value,
                 userId: parseInt(localStorage.getItem("currentUser")),
-                senderName: foundMessageUser.firstName
+                senderName: foundMessageUser.name
             })
         }
     

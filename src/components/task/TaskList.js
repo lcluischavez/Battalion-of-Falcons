@@ -4,13 +4,16 @@ import Task from "./Task"
 import "./Tasks.css"
 
 export default (props) => {
-
     const { tasks } = useContext(TaskContext)
-    const userTasks = tasks.filter(task => task.userId === parseInt(localStorage.getItem("currentUser")))
+    const userTasks = tasks.filter(task => {
+
+        return task.userId === parseInt(localStorage.getItem("currentUser"))
+    })
     const doneTask = userTasks.filter(task => task.done === true)
     const openTask = userTasks.filter(task => task.done === false)
 
     return (
+        
         <div className="tasks">
             <h1>Tasks</h1>
 
@@ -36,7 +39,6 @@ export default (props) => {
             </article>
 
         </div>
-
         
     )
 }

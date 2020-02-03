@@ -11,6 +11,11 @@ export default ({message, match, history}) => {
     <section className="message">
          <div className="message__message">{message.message}</div>
          <div className="message__sender">{message.senderName}</div>
+
+        <button onClick={() => {
+                history.push(`/messages/edit/${message.id}`)
+            }}>Edit</button>
+
          <button className="btn--delete"
                 onClick={() => {
                 deleteMessage(message)

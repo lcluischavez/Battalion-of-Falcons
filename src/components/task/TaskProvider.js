@@ -11,6 +11,7 @@ export const TaskContext = React.createContext()
  */
 export const TaskProvider = (props) => {
     const [tasks, setTasks] = useState([])
+
     const getTasks = () => {
         return fetch("http://localhost:8088/tasks")
             .then(res => res.json())
@@ -35,6 +36,21 @@ export const TaskProvider = (props) => {
         .then(getTasks)
     }
 
+    const editTasks = (isComplete, id)=> {
+        return fetch(`http://localhost:8088/tasks/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+
+                done: isComplete
+
+            })
+        })
+            .then(getTasks)
+      
+      }
     /*
         Load all tasks when the component is mounted. Ensure that
         an empty array is the second argument to avoid infinite loop.
@@ -49,7 +65,7 @@ export const TaskProvider = (props) => {
 
     return (
         <TaskContext.Provider value={{
-            tasks, addTask, deleteTask
+            tasks, addTask, deleteTask, editTasks
         }}>
             {props.children}
         </TaskContext.Provider>
