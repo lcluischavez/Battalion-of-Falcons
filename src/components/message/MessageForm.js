@@ -16,7 +16,7 @@ console.log(foundMessageUser)
             addMessage({
                 message: messageMessage.current.value,
                 userId: parseInt(localStorage.getItem("currentUser")),
-                senderName: foundMessageUser.firstName
+                senderName: foundMessageUser.name
             })
         }
     
