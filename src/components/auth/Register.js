@@ -5,6 +5,7 @@ const Register = props => {
     const firstName = useRef()
     const lastName = useRef()
     const email = useRef()
+    const username = useRef()
     const password = useRef()
     const verifyPassword = useRef()
 
@@ -32,6 +33,7 @@ const Register = props => {
                         },
                         body: JSON.stringify({
                             email: email.current.value,
+                            username: username.current.value,
                             password: password.current.value,
                             name: `${firstName.current.value} ${lastName.current.value}`
                         })
@@ -75,6 +77,14 @@ const Register = props => {
                         name="email"
                         className="form-control"
                         placeholder="Email address"
+                        required />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="username"> Username </label>
+                    <input ref={username} type="username"
+                        name="username"
+                        className="form-control"
+                        placeholder="Username"
                         required />
                 </fieldset>
                 <fieldset>
