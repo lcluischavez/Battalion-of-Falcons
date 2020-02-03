@@ -15,7 +15,7 @@ export default (props) => {
     // freindsRelationships.map(freind => freind.freindId === true)
 
     return (
-        <div className="friends" className="rightSection">
+        <div className="friends">
             <h1>Friends</h1>
             <button onClick={() => props.history.push("/friends/create")}>
                 Add Friend

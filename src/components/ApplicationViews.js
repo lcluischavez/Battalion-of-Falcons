@@ -30,47 +30,53 @@ export default props => {
                         <FriendProvider>
                             <MessageProvider>
                                 <UserProvider>
-                                    {/* Render the location list when http://localhost:3000/ */}
-                                    <Route
-                                        exact
-                                        path="/"
-                                        render={props => <TaskList {...props} />}
-                                    />
-                                    <Route exact path="/tasks/create">
-                                        <TaskForm />
-                                    </Route>
+                                    <main className="container">
+                                        <div className="leftSection">
+                                            {/* Render the location list when http://localhost:3000/ */}
+                                            <Route
+                                                exact
+                                                path="/"
+                                                render={props => <TaskList {...props} />}
+                                            />
+                                            <Route exact path="/tasks/create">
+                                                <TaskForm />
+                                            </Route>
+                                        </div>
+                                        
+                                        <div className="centerSection">
+                                            <Route
+                                                exact
+                                                path="/"
+                                                render={props => <EventList {...props} />}
+                                            />
+                                            <Route exact path="/events/create">
+                                                <EventForm />
+                                            </Route>
 
-                                    <Route
-                                        exact
-                                        path="/"
-                                        render={props => <EventList {...props} />}
-                                    />
-                                    <Route exact path="/events/create">
-                                        <EventForm />
-                                    </Route>
-
-                                    <Route
-                                        exact
-                                        path="/"
-                                        render={props => <ArticleList {...props} />}
-                                    />
-                                    <Route exact path="/articles/create">
-                                        <ArticleForm />
-                                    </Route>
-
-                                    <Route exact 
-                                    path="/" render={props => <MessageList {...props} />
-                                    } />
-                                    <Route exact path="/messages/create">
-                                        <MessageForm />
-                                    </Route>
-                                    
-                                    <Route exact path="/" render={
-                                        props => <FriendList {...props} />
-                                    } />
-                                    <Route exact path="/friends/create">
-                                        <FriendForm />
-                                    </Route>
+                                            <Route
+                                                exact
+                                                path="/"
+                                                render={props => <ArticleList {...props} />}
+                                            />
+                                            <Route exact path="/articles/create">
+                                                <ArticleForm />
+                                            </Route>
+                                        </div>
+                                        <div className="rightSection">
+                                            <Route exact path="/" render={
+                                                props => <FriendList {...props} />
+                                            } />
+                                            <Route exact path="/friends/create">
+                                                <FriendForm />
+                                            </Route>
+                                            <Route exact 
+                                            path="/" render={props => <MessageList {...props} />
+                                            } />
+                                            <Route exact path="/messages/create">
+                                                <MessageForm />
+                                            </Route>   
+                                        </div>
+                                    </main>
                                 </UserProvider>
                             </MessageProvider>
                         </FriendProvider>

@@ -8,7 +8,7 @@ export default (props) => {
     const { messages } = useContext(MessageContext)
 console.log(messages)
     return (
-        <div className="messages" className="rightSection">
+        <div className="messages">
             <h1>Messages</h1>
             <button onClick={() => props.history.push("/messages/create")}>
                 Add message

@@ -7,7 +7,7 @@ export default (props) => {
     const { events } = useContext(EventContext)
 
     return (
-        <div className="events" className="leftSection">
+        <div className="events">
             <h1>Events</h1>
             <button onClick={() => props.history.push("/events/create")}>
                 Add Event
