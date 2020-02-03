@@ -15,7 +15,12 @@ fieldset {
     padding: 0.5rem;
 }
 
-rightSection {
+.rightSection {
     display: flex;
     flex-basis: 25%;
+}
+.freind__profilePicture {
+    background-color: cornflowerblue;
+    height: 100px;
+    width: 100px;
 }

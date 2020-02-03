@@ -15,7 +15,12 @@ fieldset {
     padding: 0.5rem;
 }
 
-rightSection {
+.rightSection {
     display: flex;
     flex-direction: 25%;
+}
+
+.message__sender {
+    font-size: larger;
+    color: darkred;
 }

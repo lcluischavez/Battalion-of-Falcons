@@ -7,15 +7,18 @@ export default props => {
     const taskName = useRef("")
     const taskTask = useRef("")
     const taskExCompDate = useRef("")
+    const currentTaskUser = parseInt(localStorage.getItem("currentUser"))
 
     const constructNewTask = () => {
             addTask({
                 name: taskName.current.value,
                 task: taskTask.current.value,
                 exCompDate: taskExCompDate.current.value,                
+                done: false,
+                userId: currentTaskUser
             })
         }
-
+    
     return (
         <form className="taskForm">
             <h2 className="taskForm__title">New Task</h2>
