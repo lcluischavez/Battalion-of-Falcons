@@ -13,7 +13,7 @@ import ArticleForm from "./article/ArticleForm";
 import { MessageProvider } from "./message/MessageProvider";
 import MessageForm from "./message/MessageForm";
 import MessageList from "./message/MessageList";
-import MessageDetails from "./message/MessageDetails";
+// import MessageDetails from "./message/MessageDetails";
 
 import FriendList from "./friends/FriendList";
 import FriendForm from "./friends/FriendForm";
