@@ -1,15 +1,22 @@
 import React, { useContext, useRef } from "react"
 import { useState, useEffect } from "react"
 import { MessageContext } from "./MessageProvider"
+import { UserContext } from "../user/UserProvider"
 import "./Messages.css"
 
 export default props => {
+
+    const { user } = useContext(UserContext)
     const { addMessage } = useContext(MessageContext)
     const messageMessage = useRef("")
 
+    const foundMessageUser = user.find(singleUser => singleUser.id === parseInt(localStorage.getItem("currentUser")))
+console.log(foundMessageUser)
     const constructNewMessage = () => {
             addMessage({
-                message: messageMessage.current.value,                
+                message: messageMessage.current.value,
+                userId: parseInt(localStorage.getItem("currentUser")),
+                senderName: foundMessageUser.firstName
             })
         }
     

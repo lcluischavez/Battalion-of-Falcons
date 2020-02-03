@@ -2,8 +2,11 @@ import React, { useContext } from "react"
 import { MessageContext } from "./MessageProvider"
 import Message from "./Message"
 import "./Messages.css"
+
 export default (props) => {
+
     const { messages } = useContext(MessageContext)
+console.log(messages)
     return (
         <div className="messages">
             <h1>Messages</h1>
@@ -16,5 +19,5 @@ export default (props) => {
                 }
             </article>
         </div>
-    )
+    )    
 }
