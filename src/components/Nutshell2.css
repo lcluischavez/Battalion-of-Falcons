@@ -14,9 +14,15 @@ textarea {
 	line-height: 1.5;
 }
 
+body {
+  background-image: url(https://i.pinimg.com/originals/b2/33/a2/b233a2c751742ce446f665941771aa06.jpg);
+  background-position: center;
+}
+
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Patua One', serif;
   letter-spacing: 2px;
+  color: white;
 }
 
 p {
@@ -33,3 +39,15 @@ address {
   margin: 0 0 1.5em;
 }
 
+.container {
+  display: flex;
+}
+
+
+form {  
+    position: fixed;
+    margin-left: 450px;
+    margin-right: 100px;
+    margin-top: 80px;
+    color: white;
+}

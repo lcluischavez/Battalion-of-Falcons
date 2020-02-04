@@ -42,8 +42,6 @@ export default props => {
                     type="text"
                     id="articleTimestamp"
                     ref={articleTimestamp}
-                    required
-                    autoFocus
                     className="form-control"
                     placeholder="Timestamp"
                 />
@@ -54,8 +52,6 @@ export default props => {
                     type="text"
                     id="articleSynopsis"
                     ref={articleSynopsis}
-                    required
-                    autoFocus
                     className="form-control"
                     placeholder="Synopsis"
                 />
@@ -66,8 +62,6 @@ export default props => {
                     type="text"
                     id="articleUrl"
                     ref={articleUrl}
-                    required
-                    autoFocus
                     className="form-control"
                     placeholder="Url"
                 />

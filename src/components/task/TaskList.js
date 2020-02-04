@@ -15,25 +15,25 @@ export default (props) => {
     return (
         
         <div className="tasks">
-
             <h1>Tasks</h1>
 
             <button onClick={() => props.history.push("/tasks/create")}>
                 Add Task
             </button>
-            <h1>Done</h1>
-            <article className="taskList">
-                {
-                    doneTask.map(tas => <Task key={tas.id} task={tas} {...props} />)
-                }
-            </article>
-            <h1>Open</h1>
+            
+            <h2>Open</h2>
             <article className="taskList">
                 {
                     openTask.map(tas => <Task key={tas.id} task={tas} {...props} />)
                 }
             </article>
 
+            <h2>Done</h2>
+            <article className="taskList">
+                {
+                    doneTask.map(tas => <Task key={tas.id} task={tas} {...props} />)
+                }
+            </article>
             <article className="taskList">
                 {tasks.map(task => <Task key={task.id} task={task} {...props } />)}
             </article>

@@ -1,3 +1,4 @@
+import "./Articles.css";
 import React, { useContext } from "react"
 import { ArticleContext } from "./ArticleProvider"
 import "./Articles.css"

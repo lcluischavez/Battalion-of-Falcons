@@ -40,8 +40,6 @@ export default props => {
                     type="text"
                     id="taskTask"
                     ref={taskTask}
-                    required
-                    autoFocus
                     className="form-control"
                     placeholder="Task"
                 />
@@ -52,8 +50,6 @@ export default props => {
                     type="text"
                     id="taskExCompDate"
                     ref={taskExCompDate}
-                    required
-                    autoFocus
                     className="form-control"
                     placeholder="Expected Completion Date"
                 />
